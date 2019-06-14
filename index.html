@@ -1,0 +1,389 @@
+<html>
+    <head>     
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
+	 <script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	 <meta name="viewport" content="width=device-width, user-scalable=no">
+
+		
+    </head>
+	
+    <body>
+	<div class="container">
+        <div class="text-center">
+		<h1 class="display-4">Facilitador de Vida</h1>
+		</div>
+	</div>		 
+	<div class="container">
+		<div class="accordion shadow " id="accordionExample">
+
+		  <div class="card">
+			<div class="card-header" id="headingOne">
+			  <h2 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				  Procurar Material
+				</button>
+			  </h2>
+			</div>
+
+			<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+			  <div class="card-body">
+				<div class="container ">        		
+					<form>
+						<div class="form-row">	
+								<div class="col-sm-5 mt-4">
+									<input type="text" class="form-control copy" id="idMat" placeholder="ID">
+								</div>
+										
+								<div class="col-sm-3 mt-4">
+									<select class="custom-select mr-sm-2" id="Type">
+										<option value="1">Imagem</option>
+										<option value="2">News</option>
+										<option value="3">Link</option>
+										<!--<option value="3">Three</option>-->
+									</select>
+								</div>
+								
+								<div class="col-auto mt-4">
+								  <a href="" id="qdlc" target="_blank"><button type="button" onclick="searchBanner()" class="btn btn-primary">Buscar</button></a>
+								</div>
+									
+							
+						</div>			 
+					</form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="card">
+			<div class="card-header" id="headingTwo">
+			  <h2 class="mb-0">
+				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				  Procurar Campanha
+				</button>
+			  </h2>
+			</div>
+			<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+			  <div class="card-body">
+				<div class="container ">        		
+					<form>
+						<div class="form-row">	
+								<div class="col-sm-7 mt-4">
+									<input type="text" class="form-control copy" id="idCam" placeholder="ID">
+								</div>
+								
+								<div class="col-auto mt-4">
+								  <a href="" id="qdlci" target="_blank"><button type="button" onclick="searchCampaign()" class="btn btn-primary">Buscar</button></a>
+								</div>
+									
+							
+						</div>			 
+					</form>
+				</div>
+			  </div>
+			  </div>
+			</div>
+		  
+		  <div class="card">
+			<div class="card-header" id="headingThree">
+			  <h2 class="mb-0">
+				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				  Criar Pixel
+				</button>
+			  </h2>
+			</div>
+			<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+			  <div class="card-body">
+				<div class="container ">        		
+					<form>
+						<div class="form-row">	
+								<div class="col-sm-1 mt-4">
+									<select class="custom-select mr-sm-2" id="TypePixel">
+										<option value="img">Img</option>
+										<option value="ifr">Iframe</option>
+									</select>
+								</div>
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="TotalCost" value="{TotalCost}">
+								</div>
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="AccountID" placeholder="AccountID">
+								</div>
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="OrderID" value="{OrderID}">
+								</div>									
+								<div class="col-sm-1 mt-4">
+									<select class="custom-select mr-sm-2" id="ActionCode">
+										<option value="sale">Sale</option>
+										<option value="lead">Lead</option>
+									</select>
+								</div>
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="CampaignID" placeholder="Campaign ID">
+								</div>
+								<div class="col-sm-1 mt-4">
+									<select class="custom-select mr-sm-2" id="Currency">
+										<option value="USD">USD</option>
+										<option value="EUR">EUR</option>
+										<option value="ARP">ARP</option>
+										<option value="BRL" selected="selected">BRL</option>
+									</select>
+								</div>
+								<div class="col-sm-1 mt-4">
+									<select class="custom-select mr-sm-1" id="validador">
+										<option value="html">HTML</option>
+										<option value="gtm">GTM</option>
+									</select>
+								</div>
+								<div class=" input-group col-sm-5 mt-4">
+									<div class="input-group-prepend">
+									  <div class="input-group-text">Name Save</div>
+									</div>
+									<input type="text" class="form-control"  id="nameFile" placeholder="Save Name" value="Pixel_">
+								</div>	
+								
+								
+								<div class="input-group col-sm-12 mt-4">
+								<div class="input-group-append">
+										<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="copyPixel()">Copiar</button>
+									</div>
+									<textarea class="form-control" id="textarea" rows="3"></textarea>
+								</div>	
+								
+								<div class="col-auto mt-4">
+								  <button type="button"  onclick="makePixel()" class="btn btn-primary">Gerar</button>
+								</div>
+								<div class="col-auto mt-4">
+								  <button type="button"  onclick="savePixel()" class="btn btn-success">Salvar</button>
+								</div>
+								
+								
+							
+						</div>			 
+					</form>
+				</div>
+			  </div>
+			</div>
+			
+		  </div>
+		  
+		  <div class="card">
+			<div class="card-header" id="headingFour">
+			  <h2 class="mb-0">
+				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+				  Criar URL Postback
+				</button>
+			  </h2>
+			</div>
+			<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+			  <div class="card-body">
+				<div class="container ">        		
+					<form>
+						<div class="form-row needs-validation">	
+								<div class="col-sm-2 mt-4">
+									<select class="custom-select mr-sm-2" id="CountryCodeURL" >
+										<option value="{Countrycode}">{Countrycode}</option>
+										<option value="BR">BR</option>
+									</select>
+								</div>									
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="ActionCodeURL" value="lead">
+								</div>
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="TotalCostURL" value="{TotalCost}">
+								</div>
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="OrderIDURL" value="{OrderID}">
+								</div>
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="CampaignIDURL" placeholder="Campaign ID" required >
+								</div>
+								<div class="col-sm-2 mt-4">
+									<select class="custom-select mr-sm-2" id="RefIDURL">
+										<option value="{RefID}">{RefID}</option>
+										<option value="4f99af95c9ae7">4f99af95c9ae7</option>
+									</select>
+								</div>
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" placeholder="2018-01-01" id="DateURL" value="{TransactionDate}">
+								</div>
+								<div class="col-sm-1 mt-4">
+									<select class="custom-select mr-sm-2" id="CurrencyURL">
+										<option value="USD">USD</option>
+										<option value="EUR">EUR</option>
+										<option value="ARP">ARP</option>
+										<option value="BRL" selected="selected">BRL</option>
+									</select>
+								</div>
+								<div class=" input-group col-sm-6 mt-4">
+									<div class="input-group-prepend">
+									  <div class="input-group-text">Name Save</div>
+									</div>
+									<input type="text" class="form-control"  id="nameFileURL" placeholder="Save Name" value="S2S Integration - ">
+								</div>
+								<div class="input-group col-sm-12 mt-4">
+								<div class="input-group-append">
+										<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="copyS2S()">Copiar</button>
+									</div>
+									<textarea class="form-control" id="textareaurl" rows="3"></textarea>
+									
+								</div>
+								<div class="col-auto mt-4">
+								  <button type="button"  onclick="createUrl()" class="btn btn-primary">Gerar</button>
+								</div>
+								<div class="col-auto mt-4">
+								  <button type="button"  onclick="saveURL()" class="btn btn-success">Salvar</button>
+								</div>	
+								<!--<button type="button" class="close mt-3 ml-2" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>-->
+						</div>	
+						
+						
+						<div role="separator" class="dropdown-divider mt-4"></div>
+						<p class="font-weight-lighter mt-1">Configurações para o Servidor!</p>
+						
+						<div class="form-row">	
+																
+								<div class="col-sm-3 mt-4">
+									<input type="text" class="form-control copy" id="CampaignName" placeholder="Nome da Campanha">
+								</div>
+								<div class="col-sm-2 mt-4">
+									<input type="number" class="form-control copy" id="Commis" placeholder="Commis">
+								</div>
+								<div class="col-sm-1 mt-4">
+									<select class="custom-select mr-sm-2" id="TypeCommis">
+										<option value="$">$</option>
+										<option value="%">%</option>
+									</select>
+								</div>								
+								
+								<div class="col-sm-1 mt-4">
+									<select class="custom-select mr-sm-2" id="CurrencyAdded">
+										<option value="USD">USD</option>
+										<option value="EUR">EUR</option>
+										<option value="ARP">ARP</option>
+										<option value="BRL"	>BRL</option>
+									</select>
+								</div>
+								<div class="col-auto mt-4">
+								  <button type="button"  onclick="makeGIT()" class="btn btn-primary">Gerar</button>
+								</div>
+								<div class="input-group col-sm-12 mt-4">
+								<div class="input-group-append">
+									<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="copyCampaign()">Copiar</button>
+								</div>
+								<div class="input-group-append">
+									<a href="https://gitlab.com/clickwise/s2s/blob/dev/commissions_configuration.csv" target="_blank"><button class="btn btn-outline-primary" type="button" id="button-addon2">Edit GIT</button></a>
+								</div>
+									<textarea class="form-control" id="textareacampaign" rows="1"></textarea>
+									
+								</div>
+								<div class="input-group col-sm-12 mt-4">
+								<div class="input-group-append">
+									<button class="btn btn-outline-secondary" type="button" onclick="copyCommis()">Copiar</button>
+								</div>
+								<div class="input-group-append">
+									<a href="https://gitlab.com/clickwise/s2s/blob/dev/commissions_configuration.csv" target="_blank"><button class="btn btn-outline-primary" type="button" id="button-addon2">Edit GIT</button></a>
+								</div>
+									<textarea class="form-control" id="textareacommis" rows="1"></textarea>
+									
+								</div>
+								
+						</div>	
+						
+					</form>
+				</div>
+			  </div>
+			  </div>
+			</div>
+		  
+		  <div class="card">
+			<div class="card-header" id="headingFive">
+			  <h2 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+				  Testar Material
+				</button>
+			  </h2>
+			</div>
+
+			<div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionExample">
+			  <div class="card-body">
+				<div class="container ">        		
+					<form>
+						<div class="form-row">	
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="AffiliateID" placeholder="RefID" value="4f99af95c9ae7">
+								</div>								
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="BannerID" placeholder="ID">
+								</div>								
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="ExtraData" placeholder="Extra_Data 1">
+								</div>									
+								<div class="col-sm-2 mt-4">
+									<input type="text" class="form-control copy" id="ExtraData1" placeholder="Extra_Data 2">
+								</div>	
+								<div class="col-auto mt-4">
+								 <button type="button"  class="btn btn-primary" onclick="createTestLink()">Gerar</button>								 
+								</div>
+								
+								<div class="modal fade" id="Alerta" tabindex="-1" role="dialog">
+								  <div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="exampleModalCenterTitle">Atenção</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										  <span aria-hidden="true">&times;</span>
+										</button>
+									  </div>
+									  <div class="modal-body">
+										Éh serio 😒? Quer gerar um Link Teste sem o ID do material?🙄
+									  </div>
+									  <div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar	</button>
+									  </div>
+									</div>
+								  </div>
+								</div>
+								
+								<div class="input-group col-sm-12 mt-4">
+								<div class="input-group-append">
+										<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="copyTest()">Copiar</button>
+									</div>
+									<textarea class="form-control" id="textareateste" rows="1"></textarea>
+								</div>
+									
+							
+						</div>			 
+					</form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  
+		  </div>
+		  
+		  
+		</div>
+		<div class="text-center mt-4"><img src="https://www.clickwise.net/img/logoslider.png" width="300px" /></div>
+	</div>
+		
+		<div class="navbar navbar-dark bg-dark mt-4">
+		<div class="container">
+		<a class="navbar-brand" href="https://clickwise.net/">
+    <img src="https://clickwise.net/img/ClickwiseHorizontalLogo.png" width="200px" class="d-inline-block align-top" alt=""> </a>
+		
+		  <span class="navbar-text">
+			  Facilitador de Vida - Gusttavo Felipe
+			</span>
+		</div>
+		</div>
+	</body>
+	<script src="assets/js/functions.js"></script>
+	
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/js/selectAllOnClick.js"></script>
+</html>
