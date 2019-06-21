@@ -39,7 +39,7 @@ function searchBanner() {
 	if (idmat != "" && idmat != " ") {
 	
 	for (i = 0; i <  sepador.length;  i++) {
-		id += '<div class="list-group"><a href="'+ linkpampa + sepador[i] + linkFinal +'" target="_blank" class="list-group-item list-group-item-action">' + sepador[i] + ':Ctrl + Click' + n++ + '</a>'
+		id += '<div class="list-group"><a href="'+ linkpampa + sepador[i] + linkFinal +'" target="_blank" class="list-group-item list-group-item-action">' + sepador[i] + ': Ctrl + Click' + n++ + '</a>'
 		document.getElementById("ttest").innerHTML = id;	
 	}	
 	}
