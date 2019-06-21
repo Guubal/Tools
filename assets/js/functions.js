@@ -43,7 +43,7 @@ function searchBanner() {
 		document.getElementById("ttest").innerHTML = id;	
 	}	
 	}
-	else {
+	else {	
 		 $('#AlertaLinkTest').modal(focus)
 	}
 };
@@ -181,6 +181,7 @@ function createUrl()
                 }
 				
                 var posturl = document.getElementById("textareaurl").innerHTML = url;
+				 $('#Alerta-Post').modal(focus)
 };
 function copyS2S() {
                 var copyText = document.getElementById("textareaurl");
