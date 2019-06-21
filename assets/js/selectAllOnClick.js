@@ -18,3 +18,15 @@ $(".copy").blur(function() {
         }
       }
     });
+$(document).keypress(function(e) {
+    if(e.which == 13) $('.enter').click();
+
+});
+
+
+$('.auto').keypress(function(e) {
+    if(e.which == 13) {
+      e.preventDefault();
+      console.log('Não vou enviar');
+    }
+});

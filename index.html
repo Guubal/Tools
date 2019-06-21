@@ -1,20 +1,31 @@
 <html>
     <head>     
+	 <link rel="shortcut icon" href="assets/images/loogo.jpg" type="image/png" />
+	 <meta charset="utf-8">
+	 <title>Clickwise Brasil | Tools  </title>
 	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
 	 <script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	 <meta name="viewport" content="width=device-width, user-scalable=no">
 
 		
     </head>
-	
+	<style>
+	.#collapseOne:hover  {
+     
+     -moz-transform: scale(1);
+     -o-transform: scale(1);
+     -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+     -o-transition-duration: 1s;
+ }
+	}
+	</style>
     <body>
 	<div class="container">
-        <div class="text-center">
-		<h1 class="display-4">Facilitador de Vida</h1>
-		</div>
+        <div class="text-center mt-2"><img src="https://www.clickwise.net/img/logoslider.png" width="300px" /></div>
 	</div>		 
 	<div class="container">
-		<div class="accordion shadow " id="accordionExample">
+		<div class="accordion shadow mt-4" id="accordionExample">
 
 		  <div class="card">
 			<div class="card-header" id="headingOne">
@@ -27,28 +38,55 @@
 
 			<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 			  <div class="card-body">
-				<div class="container ">        		
+				<div class="container ">   
+					<div class="alert alert-primary alert-dismissible fade show" role="alert">
+					  <strong>Informação! </strong>Dê um espaço para buscar mais de um material.
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
 					<form>
 						<div class="form-row">	
 								<div class="col-sm-5 mt-4">
-									<input type="text" class="form-control copy" id="idMat" placeholder="ID">
+									<input type="text" class="form-control copy auto" id="idMat" placeholder="ID" data-toggle="tooltip" data-placement="top" title="ID do Material">
 								</div>
 										
 								<div class="col-sm-3 mt-4">
-									<select class="custom-select mr-sm-2" id="Type">
+									<select class="custom-select mr-sm-2" id="Type" >
 										<option value="1">Imagem</option>
 										<option value="2">News</option>
 										<option value="3">Link</option>
+										<option value="4">Cupom</option>
+																	
 										<!--<option value="3">Three</option>-->
 									</select>
 								</div>
 								
 								<div class="col-auto mt-4">
-								  <a href="" id="qdlc" target="_blank"><button type="button" onclick="searchBanner()" class="btn btn-primary">Buscar</button></a>
+								 <!--<a href="" id="qdlc" target="_blank">--><button type="button" onclick="searchBanner()" class="btn btn-primary enter">Buscar</button>
 								</div>
-									
-							
-						</div>			 
+						</div>	
+						<div class="modal fade" id="AlertaLinkTest" tabindex="-1" role="dialog">
+								  <div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="exampleModalCenterTitle">Atenção</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										  <span aria-hidden="true">&times;</span>
+										</button>
+									  </div>
+									  <div class="modal-body">
+										Éh serio 😒? Quer abrir oque sem o ID do material?🙄
+									  </div>
+									  <div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar	</button>
+									  </div>
+									</div>
+								  </div>
+								</div>
+									<div class="list-group mt-3" id="ttest">
+																
+								</div>
 					</form>
 				</div>
 			  </div>
@@ -68,7 +106,7 @@
 					<form>
 						<div class="form-row">	
 								<div class="col-sm-7 mt-4">
-									<input type="text" class="form-control copy" id="idCam" placeholder="ID">
+									<input type="text" class="form-control copy" id="idCam" placeholder="ID" data-toggle="tooltip" data-placement="top" title="ID da Campanha">
 								</div>
 								
 								<div class="col-auto mt-4">
@@ -312,10 +350,10 @@
 					<form>
 						<div class="form-row">	
 								<div class="col-sm-2 mt-4">
-									<input type="text" class="form-control copy" id="AffiliateID" placeholder="RefID" value="4f99af95c9ae7">
+									<input type="text" class="form-control copy" id="AffiliateID" placeholder="RefID" value="4f99af95c9ae7" data-toggle="tooltip" data-placement="top" title="RefID do Affiliado">
 								</div>								
 								<div class="col-sm-2 mt-4">
-									<input type="text" class="form-control copy" id="BannerID" placeholder="ID">
+									<input type="text" class="form-control copy" id="BannerID" placeholder="ID"  data-toggle="tooltip" data-placement="top" title="ID do Material">
 								</div>								
 								<div class="col-sm-2 mt-4">
 									<input type="text" class="form-control copy" id="ExtraData" placeholder="Extra_Data 1">
@@ -350,7 +388,7 @@
 								<div class="input-group-append">
 										<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="copyTest()">Copiar</button>
 									</div>
-									<textarea class="form-control" id="textareateste" rows="1"></textarea>
+									<textarea class="form-control" id="textareateste" rows="1" data-toggle="tooltip" data-placement="top" title="URL para Teste"></textarea>
 								</div>
 									
 							
@@ -365,10 +403,10 @@
 		  
 		  
 		</div>
-		<div class="text-center mt-4"><img src="https://www.clickwise.net/img/logoslider.png" width="300px" /></div>
+		
 	</div>
 		
-		<div class="navbar navbar-dark bg-dark mt-4">
+		<div class="navbar navbar-dark bg-dark mt-5">
 		<div class="container">
 		<a class="navbar-brand" href="https://clickwise.net/">
     <img src="https://clickwise.net/img/ClickwiseHorizontalLogo.png" width="200px" class="d-inline-block align-top" alt=""> </a>
