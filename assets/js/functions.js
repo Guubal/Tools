@@ -173,10 +173,10 @@ function createUrl()
                         break;
                     default:
                     if(countrycodeurl == ''){
-                        url = "http://track.clickwise.net/pb?ActionCode="+ actioncodeurl + "&TotalCost="+ totalcosturl + "&OrderID="+ orderidurl + "&CampaignID=" + campaignidurl + "&RefId=" + referralidurl + "&Date=" + dateurl + "&CountryCode=" + currencyurl;
+                        url = "http://track.clickwise.net/pb?ActionCode="+ actioncodeurl + "&TotalCost="+ totalcosturl + "&OrderID="+ orderidurl + "&CampaignID=" + campaignidurl + "&RefId=" + referralidurl + "&Date=" + dateurl + "&Currency=" + currencyurl;
                     }
                     else{
-                        url = "http://track.clickwise.net/pb?CountryCode="+ countrycodeurl + "&ActionCode="+ actioncodeurl + "&TotalCost="+ totalcosturl + "&OrderID="+ orderidurl + "&CampaignID=" + campaignidurl + "&RefId=" + referralidurl + "&Date=" + dateurl + "&CountryCode=" + currencyurl;
+                        url = "http://track.clickwise.net/pb?CountryCode="+ countrycodeurl + "&ActionCode="+ actioncodeurl + "&TotalCost="+ totalcosturl + "&OrderID="+ orderidurl + "&CampaignID=" + campaignidurl + "&RefId=" + referralidurl + "&Date=" + dateurl + "&Currency=" + currencyurl;
                     }
                 }
 				
