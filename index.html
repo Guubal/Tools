@@ -7,12 +7,14 @@
 	 <script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	 <meta name="viewport" content="width=device-width, user-scalable=no">
 	    
-	    <script>
-		  dataLayer = [{
-		    'pageCategory': 'signup',
-		    'visitorType': 'high-value'
-		  }];
-	    </script>
+	 <script>
+	 window.dataLayer = window.dataLayer || [];
+	 window.dataLayer.push({
+	 'event': 'registrationComplete',
+	 'registrationCountry': 'United States',
+	 'plan': 'Premium'
+	 });
+	</script>
 	    
 	    <!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
